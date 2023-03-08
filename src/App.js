@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+/* import { Route } from "react-router"; */
+import { BrowserRouter,Routes,Route,Link } from "react-router-dom";
+import LandingPages from "./pages/LandingPages";
+import  MovieDetails  from "./pages/MovieDetails"; 
+/* import { MoviesGrid } from "./components/MoviesGrid"; */
+import styles from './styles/App.module.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+     <BrowserRouter>
+      <header className="header">
+        <Link  to="/"><h1 className={styles.title}>Movies</h1></Link>
+        
+        {/* <Link to="/movie">Movie</Link> */}
+
       </header>
-    </div>
+      <main>
+       {/* <MoviesGrid /> */}
+      
+          <Routes>
+          <Route exact path="/movies/:movieId" element={<MovieDetails />}></Route>
+          <Route path="/" element={<LandingPages />}></Route>
+          </Routes>
+       
+      </main>
+      </BrowserRouter>
+    </>
   );
 }
 
