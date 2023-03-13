@@ -11,7 +11,7 @@ function App() {
     <>
      <BrowserRouter>
       <header className="header">
-        <Link  to="/"><h1 className={styles.title}>Movies</h1></Link>
+        <Link  to="/Movies-App"><h1 className={styles.title}>Movies</h1></Link>
         
         {/* <Link to="/movie">Movie</Link> */}
 
